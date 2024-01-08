@@ -1,9 +1,0 @@
-#!/usr/bin/python3
-import py_compile
-import os
-py_file = os.getenv('$PYFILE')
-if py_file and os.path.isfile(py_file):
-    py_compile.compile(py_file, cfile=f"{py_file}c")
-    print(f"Compilation successful: {py_file} compiled to {py_file}c")
-else:
-    print("Error: Environment variable PYFILE is not set or does not contain a valid file name.")
