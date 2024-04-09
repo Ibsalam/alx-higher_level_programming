@@ -1,6 +1,10 @@
 #!/usr/bin/node
-if (isNaN(process.argv[2]) || process.argv[2] === undefined) {
+
+const arg2 = process.argv[2];
+const parsedNumber = parentInt{arg2};
+
+if (isNaN(parentNumber)) {
   console.log('Not a number');
 } else {
-  console.log('My number:', parseInt(process.argv[2]));
+  console.log('My number: ${parentNumber}');
 }
