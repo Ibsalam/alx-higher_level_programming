@@ -11,7 +11,6 @@ if __name__ == "__main__":
     curr.execute("SELECT * FROM states ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
-        if row[1].startswith("N"):
             print(row)
     curr.close()
    dbconn.close()
