@@ -4,17 +4,17 @@
 - and displays the body of the response (decoded in utf-8).
 - Using urllib and sys packages.
 """
+
+import sys
+import urllib.request
+import urllib.parse
+
+
 if __name__ == '__main__':
-    import urllib.request
-    import urllib.parse
-    import sys
+    url_argument = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
 
-    url = sys.argv[1]
-    email = sys.argv[2]
-
-    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
-
-    with urllib.request.urlopen(url, data=data) as response:
-        content = response.read().decode('utf-8')
-        print(content)
-
+    request = urllib.request.Request(url_argument, data)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().encode("utf-8"))
