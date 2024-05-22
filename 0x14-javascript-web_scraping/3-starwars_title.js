@@ -1,10 +1,10 @@
 #!/usr/bin/node
-const axios = require('axios');
-const movieId = process.argv[2];
-const API_ENDPOINT = 'https://swapi-api.hbtn.io/api/films/';
+const request = require('request');
+const episodeNum = process.argv[2];
+const API_URL = 'https://swapi-api.hbtn.io/api/films/';
 
-axios(API_ENDPOINT + movieId, function (err, response, body) {
-if (err) {
+request(API_URL + episodeNum, function (err, response, body) {
+  if (err) {
     console.log(err);
   } else if (response.statusCode === 200) {
     const responseJSON = JSON.parse(body);
